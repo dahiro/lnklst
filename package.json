@@ -1,0 +1,108 @@
+{
+  "name": "lnklst",
+  "displayName": "lnklst",
+  "homepage": "https://github.com/dahiro/lnklst",
+  "repository": "https://github.com/dahiro/lnklst.git",
+  "publisher": "dahiro",
+  "description": "Manage related git projects and links",
+  "version": "0.0.2",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "lnklst.newWindow",
+        "category": "LnkLst",
+        "title": "Change behaviour to open links new window",
+        "icon": "$(window)"
+      },
+      {
+        "command": "lnklst.sameWindow",
+        "category": "LnkLst",
+        "title": "Change behaviour to open links in same window",
+        "icon": "$(multiple-windows)"
+      },
+      {
+        "command": "lnklst.refreshEntry",
+        "category": "LnkLst",
+        "title": "Refresh",
+        "icon": "$(refresh)"
+      }
+    ],
+    "views": {
+      "lnklst": [
+        {
+          "id": "lnklst",
+          "name": "Link List",
+          "contextualTitle": "LnkLst"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "lnklst",
+          "title": "LnkLst",
+          "icon": "$(link-external)"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "lnklst.newWindow",
+          "when": "view == lnklst && !lnklst.newWindow",
+          "group": "navigation"
+        },
+        {
+          "command": "lnklst.sameWindow",
+          "when": "view == lnklst && lnklst.newWindow",
+          "group": "navigation"
+        },
+        {
+          "command": "lnklst.refreshEntry",
+          "when": "view == lnklst",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Lnk Lst",
+      "properties": {
+        "lnklst.baseFolder": {
+          "type": "string",
+          "default": "~/src",
+          "description": "Base folder where your sources get cloned to",
+          "markdownDescription": "Base folder where your sources get cloned to. Make sure `#git.openAfterClone#` is set appropriately"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.78.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "eslint": "^8.34.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.5",
+    "@vscode/test-electron": "^2.2.3"
+  }
+}

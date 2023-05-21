@@ -1,0 +1,29 @@
+{
+  "definitions": {
+    "treeitems": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/treeitem"
+      }
+    },
+    "treeitem": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "group": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/treeitems"
+}

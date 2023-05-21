@@ -1,0 +1,44 @@
+[
+  {
+    "icon": "rocket",
+    "name": "deployments",
+    "group": "xy/sk8s",
+    "children": [
+      {
+        "url": "ssh://git@git.host.com/project/argocd-apps-dev-xy-kustomize.git",
+        "icon": "send",
+        "name": "argocd prod"
+      },
+      {
+        "url": "ssh://git@git.host.com/project/argocd-apps-prod-xy-kustomize.git",
+        "icon": "send",
+        "name": "argocd nonprod"
+      },
+      {
+        "url": "ssh://git@git.host.com/project/xy-dev-kustomize.git",
+        "icon": "send",
+        "name": "dev"
+      },
+      {
+        "url": "ssh://git@git.host.com/project/xy-int-kustomize.git",
+        "icon": "send",
+        "name": "int"
+      }
+    ]
+  },
+  {
+    "icon": "source-control",
+    "name": "shared-packages",
+    "url": "git@github.com:organization/repository-x.git"
+  },
+  {
+    "icon": "source-control",
+    "name": "frontend-defaults",
+    "url": "git@github.com:organization/repository-y.git"
+  },
+  {
+    "icon": "book",
+    "name": "Documentation",
+    "url": "https://some.site.to.visit/interesting"
+  }
+]
