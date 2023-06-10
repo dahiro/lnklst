@@ -1,0 +1,27 @@
+[
+  {
+    "icon": "book",
+    "name": "Icons",
+    "url": "https://code.visualstudio.com/api/references/icons-in-labels#icon-listing"
+  },
+  {
+    "icon": "book",
+    "name": "Guides",
+    "url": "https://code.visualstudio.com/api/extension-guides/overview"
+  },
+  {
+    "icon": "book",
+    "name": "Publishing",
+    "url": "https://code.visualstudio.com/api/working-with-extensions/publishing-extension"
+  },
+  {
+    "icon": "gear",
+    "name": "Azure Devops",
+    "url": "https://dev.azure.com/dahiro/"
+  },
+  {
+    "icon": "rocket",
+    "name": "Publisher",
+    "url": "https://marketplace.visualstudio.com/manage/publishers/dahiro"
+  }
+]
