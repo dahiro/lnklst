@@ -33,6 +33,12 @@
         "category": "LnkLst",
         "title": "Refresh",
         "icon": "$(refresh)"
+      },
+      {
+        "command": "lnklst.openConfig",
+        "category": "LnkLst",
+        "title": "Edit",
+        "icon": "$(edit)"
       }
     ],
     "views": {
@@ -67,6 +73,11 @@
         },
         {
           "command": "lnklst.refreshEntry",
+          "when": "view == lnklst",
+          "group": "navigation"
+        },
+        {
+          "command": "lnklst.openConfig",
           "when": "view == lnklst",
           "group": "navigation"
         }

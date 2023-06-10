@@ -51,9 +51,9 @@ export function openItem(
       throwIfNoEntry: false,
     });
 
-    if (stat && stat.isDirectory()) {
+    if (stat?.isDirectory()) {
       console.log("opening", targetFolder);
-      vscode.commands.executeCommand(
+      return vscode.commands.executeCommand(
         "vscode.openFolder",
         vscode.Uri.file(targetFolder),
         {
@@ -62,8 +62,7 @@ export function openItem(
       );
     } else {
       console.log("cloning", item.url, targetFolder);
-      // TODO: suggest to config: git.openAfterClone to alwaysNewWindow
-      vscode.commands.executeCommand(
+      return vscode.commands.executeCommand(
         "git.clone",
         item.url,
         dirname(targetFolder)
@@ -71,15 +70,15 @@ export function openItem(
     }
   } else if (item.url.startsWith("http")) {
     console.log("opening", item.url);
-    vscode.env.openExternal(vscode.Uri.parse(item.url, true));
+    return vscode.env.openExternal(vscode.Uri.parse(item.url, true));
   } else {
     const targetFolder = join(baseFolder, item.url);
     const stat = lstatSync(targetFolder, {
       throwIfNoEntry: false,
     });
-    if (stat && stat.isDirectory()) {
+    if (stat?.isDirectory()) {
       console.log("opening", targetFolder);
-      vscode.commands.executeCommand(
+      return vscode.commands.executeCommand(
         "vscode.openFolder",
         vscode.Uri.file(targetFolder),
         {

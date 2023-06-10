@@ -28,12 +28,12 @@
   },
   {
     "icon": "source-control",
-    "name": "shared-packages",
+    "name": "project x",
     "url": "git@github.com:organization/repository-x.git"
   },
   {
     "icon": "source-control",
-    "name": "frontend-defaults",
+    "name": "projext y",
     "url": "git@github.com:organization/repository-y.git"
   },
   {

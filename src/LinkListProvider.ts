@@ -1,9 +1,7 @@
 import * as vscode from "vscode";
 let fs = require("fs");
-// import * as path from "path";
-import { readFileSync } from "node:fs";
+import { readFileSync, lstatSync } from "node:fs";
 import { join } from "node:path";
-import { lstatSync } from "node:fs";
 
 import { LinkListTreeItem } from "./types";
 
@@ -33,7 +31,7 @@ export class LinkListProvider implements vscode.TreeDataProvider<Item> {
     const stat = lstatSync(lnklstFilePath, {
       throwIfNoEntry: false,
     });
-    if (stat && stat.isFile()) {
+    if (stat?.isFile()) {
       let rawdata = readFileSync(lnklstFilePath);
       return JSON.parse(rawdata.toString());
     } else {
@@ -71,8 +69,6 @@ class Item extends vscode.TreeItem {
         ? vscode.TreeItemCollapsibleState.Collapsed
         : vscode.TreeItemCollapsibleState.None
     );
-    // this.tooltip = `tt ${this.label}-${item.children?.length}`;
-    // this.description = `dsc ${this.label}-${item.children?.length}`;
 
     if (item.icon) {
       this.iconPath = new vscode.ThemeIcon(item.icon);
