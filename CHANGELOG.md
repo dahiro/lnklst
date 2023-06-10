@@ -1,9 +1,8 @@
-# Change Log
 
-All notable changes to the "lnklst" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+# 0.1.0-beta.0 (2023-06-10)
 
-## [Unreleased]
 
-- Initial release
+### Features
+
+* automatically create config file [NOTICKET] ([9550dbe](https://github.com/dahiro/lnklst/commit/9550dbe374a02264fc257f116ef9ff48788d9b61))
