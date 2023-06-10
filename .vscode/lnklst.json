@@ -1,18 +1,29 @@
 [
   {
     "icon": "book",
-    "name": "Icons",
-    "url": "https://code.visualstudio.com/api/references/icons-in-labels#icon-listing"
-  },
-  {
-    "icon": "book",
-    "name": "Guides",
-    "url": "https://code.visualstudio.com/api/extension-guides/overview"
-  },
-  {
-    "icon": "book",
-    "name": "Publishing",
-    "url": "https://code.visualstudio.com/api/working-with-extensions/publishing-extension"
+    "name": "VSCode Docs",
+    "children": [
+      {
+        "icon": "book",
+        "name": "Product Icon Reference",
+        "url": "https://code.visualstudio.com/api/references/icons-in-labels#icon-listing"
+      },
+      {
+        "icon": "book",
+        "name": "Extension Guides",
+        "url": "https://code.visualstudio.com/api/extension-guides/overview"
+      },
+      {
+        "icon": "book",
+        "name": "Builtin Commands",
+        "url": "https://code.visualstudio.com/api/references/commands"
+      },
+      {
+        "icon": "book",
+        "name": "Publishing",
+        "url": "https://code.visualstudio.com/api/working-with-extensions/publishing-extension"
+      }
+    ]
   },
   {
     "icon": "gear",

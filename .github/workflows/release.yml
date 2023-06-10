@@ -1,0 +1,27 @@
+name: Release
+on:
+  push:
+    branches: ["main"]
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+
+    steps:
+      - uses: actions/checkout@v3
+        # env:
+        #   GITHUB_TOKEN: ${{secrets.RELEASE_TOKEN}}
+      - run: |
+          git config user.name "GitHub Action"
+          git config user.email github-actions@github.com
+          npm i -g vsce
+          npm install
+      - run: npm run release
+        # env:
+        #   GITHUB_TOKEN: ${{secrets.RELEASE_TOKEN}}
+      - run: vsce publish -p ${{secrets.PUBLISH_PAT}}
