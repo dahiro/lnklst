@@ -12,9 +12,9 @@ The items can be a:
 - **group**: the subpath described in the group will be opened (makes sense if childrens of the group item are git URLs)
 - **parseable URI**: will be opened by `vscode.env.openExternal`
 
-## Documentation
+# Documentation
 
-### `lnklist.json` Schema
+## `lnklist.json` Schema
 
 Schema described in [doc/lnklst-schema.json](doc/lnklst-schema.json) or Basically an array of objects of the following type:
 
@@ -38,7 +38,13 @@ export interface LinkListTreeItem {
 
 An example is provided in [doc/lnklst.json](doc/lnklst.json)
 
-## Requirements
+## Create Build
+
+1. Update version in [package.json](package.json)
+   1. run `npm run release-next`
+1. `vsce package`
+
+# Requirements
 
 - None yet
 
@@ -48,18 +54,17 @@ This extension contributes the following settings:
 
 - `lnklst.baseFolder`: Base folder where your sources get cloned to. Defaults to `~/src`. Make sure `#git.openAfterClone#` is set appropriately.
 
-## Known Issues
+# Known Issues
 
 - None yet
 
-## Open Tasks
+# Open Tasks
 
-- versioning
 - CI/CD Pipeline with publishing, workaround:
   1. `vsce package`
   2. install by \*.vsix
 - json editabibilty (edit and add items)
 
-## Release Notes
+# Release Notes
 
 - see [CHANGELOG.md](CHANGELOG.md)
